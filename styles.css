@@ -12,39 +12,66 @@
 }
 
 .main__cup {
+    position: relative;
     border: 2px solid black;
-    border-top: none;
     height: 300px;
     width: 100px;
     display: flex;
     flex-direction: column-reverse;
     margin-bottom: 50px;
+    border-radius: 0 0 30px 30px;
+    /* color: white; */
+}
 
-
+.main__cup:before {
+    content: "2L";
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(83, 149, 220); */
+    /* border: 2px solid red; */
+    border-radius: 0 0 30px 30px;
+    width: 100%;
+    height: 100%;
 }
 
 
 .main__cup__fill {
+    overflow: hidden;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(83, 149, 220);
     /* border: 2px solid red; */
-    flex-grow: 0;
-    /* opacity: 0; */
-    transition: height 1s ease;
-
+    border-radius: 0 0 30px 30px;
+    width: 100%;
+    height: 0%;
+    transition: height .7s ease;
+    color: white;
 }
 
 .main__cup__empty {
+    overflow: hidden;
+    position: absolute;
+    left: 0%;
+    top: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
     /* border: 2px solid red; */
-    flex-grow: 1;
-    /* opacity: 0; */
-    transition: height 1s ease;
-
+    opacity: 0;
+    height: 0%;
+    width: 100%;
+    transition: opacity 1.5s ease, height .7s ease;
 }
 
 
@@ -55,22 +82,22 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    max-width: 800px;
+    max-width: 330px;
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-
 }
 
 .cups .cup {
     display: flex;
-    width: 100px;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
     height: 100px;
     margin-right: 10px;
     margin-bottom: 10px;
     border: 2px solid black;
-
-
+    border-radius: 0 0 30px 30px;
 }
 
 .cups .cup:hover {
@@ -79,6 +106,7 @@
 
 .cups .cup.active {
     background-color: rgb(83, 149, 220);
+    color: white;
 }
 
 .cups .cup:nth-last-child(1) {
